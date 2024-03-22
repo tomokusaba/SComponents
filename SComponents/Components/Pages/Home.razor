@@ -1,0 +1,23 @@
+﻿@page "/"
+@using SmartComponents
+
+<form>
+    <p>名前: <InputText @bind-Value="@name" /></p>
+    <p>住所: <InputText @bind-Value="@addr1" /></p>
+    <p>郵便番号: <InputText @bind-Value="@zip" /></p>
+
+    <button type="submit">送信</button>
+    <SmartPasteButton DefaultIcon />
+</form>
+
+<div>
+    草場友光<br />
+
+    住所：東京都渋谷区千駄ヶ谷4-23-5 JPR千駄ヶ谷ビル5階<br />
+
+    151-0051<br />
+</div>
+
+@code {
+    string? name, addr1, city, zip;
+}

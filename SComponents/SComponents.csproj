@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>a1c68883-f4e9-4bff-8007-a72a84dcd2a6</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.5.0" />
+    <PackageReference Include="SmartComponents.AspNetCore" Version="0.1.0-preview10146" />
+    <PackageReference Include="SmartComponents.Inference.OpenAI" Version="0.1.0-preview10146" />
+  </ItemGroup>
+
+</Project>
