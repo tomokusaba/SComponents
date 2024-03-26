@@ -5,9 +5,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>a1c68883-f4e9-4bff-8007-a72a84dcd2a6</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/7a2a9ca1-d525-46e3-a47d-1cc1bcc2217f/resourceGroups/dotnetlab202403/providers/microsoft.insights/components/SComponents</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.5.0" />
     <PackageReference Include="SmartComponents.AspNetCore" Version="0.1.0-preview10146" />
     <PackageReference Include="SmartComponents.Inference.OpenAI" Version="0.1.0-preview10146" />
