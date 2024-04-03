@@ -1,3 +1,4 @@
+using Azure.Monitor.OpenTelemetry.AspNetCore;
 using Microsoft.FluentUI.AspNetCore.Components;
 using SComponents.Components;
 using SmartComponents.Inference.OpenAI;
@@ -12,10 +13,17 @@ builder.Services.AddSmartComponents()
     .WithInferenceBackend<OpenAIInferenceBackend>();
 builder.Services.AddHttpClient();
 builder.Services.AddFluentUIComponents();
-builder.Services.AddApplicationInsightsTelemetry(new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions
-{
-    ConnectionString = builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]
-});
+//builder.Services.AddApplicationInsightsTelemetry(new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions
+//{
+//    ConnectionString = builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"],
+
+
+//});
+var otel = builder.Services.AddOpenTelemetry();
+otel.UseAzureMonitor();
+otel.WithMetrics(metrics => metrics
+.AddMeter("Microsoft.AspNetCore.Hosting")
+.AddMeter("Microsoft.AspNetCore.Server.Kestrel"));
 
 var app = builder.Build();
 
