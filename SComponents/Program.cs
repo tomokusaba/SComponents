@@ -23,6 +23,9 @@ var otel = builder.Services.AddOpenTelemetry();
 otel.UseAzureMonitor();
 otel.WithMetrics(metrics => metrics
 .AddMeter("Microsoft.AspNetCore.Hosting")
+.AddMeter("Microsoft.AspNetCore.Routing")
+.AddMeter("System.Net.Http")
+.AddMeter("System.Runtime")
 .AddMeter("Microsoft.AspNetCore.Server.Kestrel"));
 
 var app = builder.Build();
